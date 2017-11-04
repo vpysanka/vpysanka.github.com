@@ -269,4 +269,4 @@ setTimeout(function() {
             catalog.classList.remove('active');
         }
     }
-}, 1000);
+}, 500);
