@@ -44,11 +44,6 @@ if (localStorage.getItem('myCart') != null) {
         document.getElementById('total-price').querySelector('span').innerHTML = outTotalPrice;
         document.getElementById('total-items').querySelector('span').innerHTML = cartData[0][1];
         number.classList.add('active');
-<<<<<<< HEAD
-
-=======
-        
->>>>>>> acb2d28b44238f14f59d341c38e73fd213f20e3e
         if (document.querySelector('.empty-cart')) {
             createCart();
         }
@@ -263,11 +258,7 @@ function cart_panel(cart_menu, cart, mega, catalog, number) {
         cart_menu.classList.remove('active');
         cart.classList.remove('active');
         if (parseInt(number.innerHTML) != 0)
-<<<<<<< HEAD
             number.classList.add('active');
-=======
-        number.classList.add('active');
->>>>>>> acb2d28b44238f14f59d341c38e73fd213f20e3e
     } else {
         cart_menu.classList.add('active');
         cart.classList.add('active');
@@ -275,8 +266,4 @@ function cart_panel(cart_menu, cart, mega, catalog, number) {
         mega.classList.remove('active');
         catalog.classList.remove('active');
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> acb2d28b44238f14f59d341c38e73fd213f20e3e
