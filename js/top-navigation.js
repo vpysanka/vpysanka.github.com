@@ -276,7 +276,7 @@ setTimeout(function() {
         }
     }
 
-}, 3000);
+}, 0);
 
 //JQuery
 // $(function() {
