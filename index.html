@@ -20,7 +20,7 @@
                     <i class="fa fa-bars" aria-hidden="true"></i>
                 </label>
                 <input type="checkbox" id="menu-tiger">
-                <a href="index.html">My E-Shop</a>
+                <a href="main.html">My E-Shop</a>
             </nav>
         </div>
     </div>
@@ -47,6 +47,15 @@
                 <i></i>
                 <span>0</span>
             </div>
+            <script type="text/javascript">
+                if (localStorage.getItem('myCart') != null) {
+                    cartData = JSON.parse(localStorage.getItem('myCart'));
+                    if (cartData[0].TotalQuantity >= 1 ) {
+                        document.getElementById('total-items').querySelector('span').innerHTML = cartData[0].TotalQuantity;
+                        document.querySelector('.shopping-bag span').classList.add('active');
+                    }
+                }
+            </script>
         </nav>
     </div>
     <div class="left-navigation">
@@ -170,9 +179,17 @@
             <p class="empty-cart">Ваша корзина пустая</p>
         </div>
     </div>
-    <script src="js/week-offer-items.js" defer></script>
-    <script src="js/week-offer-carousel.js" defer></script>
-    <script src="js/sale-leaders.js" defer></script>
-    <script src="js/top-navigation.js" defer></script>
+    <script src="js/top-navigation.js"></script>
+    <script src="js/week-offer-items.js"></script>
+    <script src="js/week-offer-carousel.js"></script>
+    <script src="js/sale-leaders.js"></script>
+    <script>
+        setTimeout(function() {
+            var script = document.createElement('script');
+            script.type = "text/javascript";
+            script.src = "js/cart.js";
+            document.head.appendChild(script);
+        }, 3000);
+    </script>
 </body>
 </html>
