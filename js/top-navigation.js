@@ -9,13 +9,22 @@ catalog.addEventListener('click', function() {
 });
 
 shopping_bag.addEventListener('click', function() {
-    showCart();
     cart_panel(cart_menu, shopping_bag, mega_menu, catalog, number);
 });
 
-document.querySelector('.close').addEventListener('click', function() {
-    mega_menu.classList.remove('active'),
-    catalog.classList.remove('active');
+mega_menu.addEventListener('mouseleave', function() {
+    setTimeout(function() {
+        mega_menu.classList.remove('active');
+    }, 500);
+});
+
+cart_menu.addEventListener('mouseleave', function() {
+    setTimeout(function() {
+        cart_menu.classList.remove('active');
+        shopping_bag.classList.remove('active');
+        if (parseInt(number.innerHTML) != 0)
+            number.classList.add('active');
+    }, 500);
 });
 
 function mega_panel(mega, catalog, cart_menu, cart) {
@@ -37,6 +46,7 @@ function cart_panel(cart_menu, cart, mega, catalog, number) {
         if (parseInt(number.innerHTML) != 0)
             number.classList.add('active');
     } else {
+        showCart();
         cart_menu.classList.add('active');
         cart.classList.add('active');
         number.classList.remove('active');
