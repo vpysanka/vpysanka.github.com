@@ -35,6 +35,28 @@ h3 {
     font-size: 18px;
 }
 
+.top {
+    position: fixed;
+    right: 30px;
+    bottom: 90px;
+    width: 60px;
+    height: 60px;
+    background-image: url(../img/up.png);
+    background-size: 60px 60px;
+    cursor: pointer;
+    border-radius: 100%;
+    display: none;
+    z-index: 10;
+}
+
+.top:hover {
+    background-image: url(../img/up-hover.png);
+}
+
+@media only screen and (max-width: 568px) {
+    .top {display: none;}
+}
+
 /* Top Navigation */
     .nav-logo {
         grid-area: logo;
@@ -571,23 +593,6 @@ h3 {
         margin-left: 16px;
     }
 
-/* #shadow-layer {
-    position: fixed;
-    min-height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(67, 87, 121, 0.6);
-    cursor: pointer;
-    z-index: 2;
-    display: none;
-}
-
-#shadow-layer.is-visible {
-    display: block;
-    animation: cd-fade-in 0.3s;
-} */
-
 /* Mega Menu */
     .mega-menu {
         position: fixed;
@@ -622,7 +627,7 @@ h3 {
     .mega-search {
         display: inline-block;
         margin: 10px 0 10px 10px;
-        min-width: 94%;
+        min-width: 98%;
     }
 
     .mega-search input[type="search"] {
@@ -644,26 +649,6 @@ h3 {
       
     .mega-search input[type="search"]:focus {
         outline: none;
-    }
-
-    .close {
-        float: right;
-        margin: 10px 10px 0 0;
-      }
-      
-    .close span {
-        background-color: rgba(128, 163, 188, 1);
-        border-radius: 5px;
-        border: 1px solid rgba(128, 163, 188, 1);
-        color: rgba(255, 255, 255, 1);
-        cursor: pointer;
-        display: inline-block;
-        font-family: "Open Sans", sans-serif;
-        font-size: 48px;
-        margin: 0;
-        line-height: 28px;
-        padding: 4px;
-        text-align: center;
     }
 
     .items-container {
