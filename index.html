@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <span class='top'></span>
     <div class="nav-logo">
         <div class="nav-container">
             <nav>
@@ -140,44 +141,40 @@
             <a href="https://www.instagram.com" title="We in Instagram"><i class="fa fa-instagram"></i></a>
         </nav>
     </div>
-    <div id="shadow-layer">
-        <div class="mega-menu">
-            <div class="mega-menu-top">
-                <div class="mega-search">
-                    <label for="mega-search">Поиск</label>
-                    <input type="search" id="mega-search" placeholder="Поиск товара">
-                </div>
-                <div class="close">
-                    <span>&#10006;</span>
-                </div>
-            </div>
-            <div class="items-container">
-                <div class="container">
-                    <a href="#">Смартфоны
-                    <div class="container-image">
-                        <img src="img/items/phones/101_1.jpg" height="100">
-                    </div>
-                    </a>
-                </div>                        
-                <div class="container">
-                    <a href="#">Планшеты
-                    <div class="container-image">
-                        <img src="img/items/tablets/201_1.jpg" height="100">
-                    </div>
-                    </a>
-                </div>
-                <div class="container">
-                    <a href="#">Смарт-часы
-                    <div class="container-image">
-                        <img src="img/items/watches/301_1.jpg" height="100">
-                    </div>
-                    </a>
-                </div>
+    
+    <div class="mega-menu">
+        <div class="mega-menu-top">
+            <div class="mega-search">
+                <label for="mega-search">Поиск</label>
+                <input type="search" id="mega-search" placeholder="Поиск товара">
             </div>
         </div>
-        <div id="cart-menu">
-            <p class="empty-cart">Ваша корзина пустая</p>
+        <div class="items-container">
+            <div class="container">
+                <a href="#">Смартфоны
+                <div class="container-image">
+                    <img src="img/items/phones/101_1.jpg" height="100">
+                </div>
+                </a>
+            </div>                        
+            <div class="container">
+                <a href="#">Планшеты
+                <div class="container-image">
+                    <img src="img/items/tablets/201_1.jpg" height="100">
+                </div>
+                </a>
+            </div>
+            <div class="container">
+                <a href="#">Смарт-часы
+                <div class="container-image">
+                    <img src="img/items/watches/301_1.jpg" height="100">
+                </div>
+                </a>
+            </div>
         </div>
+    </div>
+    <div id="cart-menu">
+        <p class="empty-cart">Ваша корзина пустая</p>
     </div>
     <script src="js/top-navigation.js"></script>
     <script src="js/week-offer-items.js"></script>
@@ -190,6 +187,23 @@
             script.src = "js/cart.js";
             document.head.appendChild(script);
         }, 3000);
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 400) {
+                    $('.top').fadeIn(300);
+                } else {
+                    $('.top').fadeOut(200);
+                }
+            });
+            $('.top').click(function() {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 200);
+                return false;
+            });
+        });
     </script>
 </body>
 </html>
