@@ -377,24 +377,26 @@ h3 {
         font-weight: bold;
     }
 
-    .week-offer-block h3 a:hover {
-        color: #8bc6db;
-    }
-
-    .week-offer-block:hover {
-        z-index: 10;
-        top: -10px;
-        border-width: 3px;
-        padding: 30px 20px;
-        border-radius: 5px;
-        box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);
-    }
-
-    .week-offer-block:hover h3 {
-        margin: -33px -22px 0 -22px;
-        padding: 9px 0;
-        background-color: #ddd;
-        background-image: linear-gradient(#eee, #ddd);
+    @media (min-width: 600px) {
+        .week-offer-block h3 a:hover {
+            color: #8bc6db;
+        }
+    
+        .week-offer-block:hover {
+            z-index: 10;
+            top: -10px;
+            border-width: 3px;
+            padding: 30px 20px;
+            border-radius: 5px;
+            box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);
+        }
+    
+        .week-offer-block:hover h3 {
+            margin: -33px -22px 0 -22px;
+            padding: 9px 0;
+            background-color: #ddd;
+            background-image: linear-gradient(#eee, #ddd);
+        }
     }
 
     .week-offer-block-image {
@@ -469,7 +471,7 @@ h3 {
         grid-area: sale-leaders;
         margin-left: auto;
         margin-right: auto;
-        width: 90%;
+        width: 100%;
     }
 
     .sale-leaders h2 {
@@ -858,15 +860,15 @@ h3 {
         text-decoration: underline;
     }
 
-/* For-phone-only */
+/* Phone */
     @media (max-width: 599px) {
         body {
             grid-template-columns: 15px 300px auto 15px;
             grid-template-areas: "logo        logo          top-navigation top-navigation " 
-                                 ".           banner        banner         .              " 
-                                 ".           week-offer    week-offer     .              " 
-                                 ".           sale-leaders  sale-leaders   .              " 
-                                 "main-footer main-footer   main-footer    main-footer    ";
+                                ".           banner        banner         .              " 
+                                ".           week-offer    week-offer     .              " 
+                                ".           sale-leaders  sale-leaders   .              " 
+                                "main-footer main-footer   main-footer    main-footer    ";
         }
 
         .navigation ul {
@@ -886,12 +888,18 @@ h3 {
         #nav-icon span:nth-child(1) {
             top: 0px;
         }
-          
+            
         #nav-icon span:nth-child(2), #nav-icon span:nth-child(3) {
             top: 9px;
         }
-          
+            
         #nav-icon span:nth-child(4) {
             top: 18px;
+        }
+
+        .week-offer-block {
+            width: 50%;
+            margin-left: 25%;
+            margin-right: 25%;
         }
     }
