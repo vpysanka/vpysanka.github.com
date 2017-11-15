@@ -1,52 +1,41 @@
-let slideIndex = 0;
 let slides = document.getElementsByClassName('week-offer-block');
-let x = 0;
-let phoneScreen = 599;
+let slideIndex = 0;
+let elements;
 
 const prev = document.querySelector('.wo_prev');
 const next = document.querySelector('.wo_next');
 
-if (window.innerWidth <= phoneScreen)
-    x = 1;
-else
-    x = 3;
-
 next.addEventListener('click', function() {
-    nextPrev(x);
+    elements = Math.floor(document.querySelector('.week-offer-all-blocks').clientWidth / 300);
+    nextPrev(elements);
 });
     
 prev.addEventListener('click', function() {
-    nextPrev(-x);
+    elements = Math.floor(document.querySelector('.week-offer-all-blocks').clientWidth / 300);
+    nextPrev(-elements);
 });
     
 function showSlide() {
     for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
-    
-    if (window.innerWidth <= phoneScreen) {
-        slides[slideIndex].style.display = "inline-block";
+
+    if (slides.length - slideIndex >= elements) {
+        for (let i = 0; i < elements; i++) {
+            slides[slideIndex + i].style.display = "inline-block";
+        }
     } else {
-        if (slides.length - slideIndex >= 3) {
-            slides[slideIndex].style.display = "inline-block";
-            slides[slideIndex + 1].style.display = "inline-block";
-            slides[slideIndex + 2].style.display = "inline-block";
+        for (let a = 0; a <= (slides.length - 1 - slideIndex); a++) {
+            slides[slideIndex + a].style.display = "inline-block";
         }
-        
-        if (slides.length - slideIndex == 2) {
-            slides[slideIndex - 1].style.display = "inline-block";
-            slides[slideIndex].style.display = "inline-block";
-            slides[slideIndex + 1].style.display = "inline-block";
-        }
-        
-        if (slides.length - slideIndex == 1) {
-            slides[slideIndex - 2].style.display = "inline-block";
-            slides[slideIndex - 1].style.display = "inline-block";
-            slides[slideIndex].style.display = "inline-block";
+
+        for (let b = 0; b <= (elements - (slides.length - slideIndex)); b++) {
+            slides[slideIndex - b].style.display = "inline-block";
         }
     }
     
-    if (slides.length - slideIndex <= x) {
+    if (slides.length - slideIndex <= elements) {
+        slideIndex = slides.length - elements;
         document.getElementsByClassName('wo_next')[0].style.display = "none";
     } else {
         document.getElementsByClassName('wo_next')[0].style.display = "inline-block";
@@ -58,8 +47,12 @@ function showSlide() {
         document.getElementsByClassName('wo_prev')[0].style.display = "inline-block";
     }
 }
+
+function nextPrev(elements) {
+    slideIndex += elements;
+
+    if (slideIndex < 0)
+        slideIndex = 0;
     
-function nextPrev(n) {
-    slideIndex += n;
     showSlide();
 }
