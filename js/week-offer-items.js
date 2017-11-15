@@ -22,25 +22,31 @@ $.getJSON('https://my-json-server.typicode.com/vpysanka/web/week-offer-items', f
         }
 
         let divWOB = item(div, "week-offer-block");
-        divWOB.setAttribute('productID', data[index].id);
-        divWOB.setAttribute('productName', data[index].name);
-        divWOB.setAttribute('productImage', data[index].image);
-        divWOB.setAttribute('productPrice', data[index].price);
-        divWOB.setAttribute('productHref', data[index].href);
-
-        let imgI = item(img, "");
-        imgI.setAttribute('src', data[index].image);
-        imgI.setAttribute('height', '200');
-
-        let divWOBI = item(div, "week-offer-block-image");
-        divWOBI.append(imgI);
-
+        
+        let h3N = item(h3, "");
+        
         let aN = item(a, "");
         aN.setAttribute('href', data[index].href);
         aN.innerHTML = data[index].name;
-
-        let h3N = item(h3, "");
+        
         h3N.append(aN);
+
+        let liWOB = item(li, "");
+        liWOB.setAttribute('productID', data[index].id);
+        liWOB.setAttribute('productName', data[index].name);
+        liWOB.setAttribute('productImage', data[index].image);
+        liWOB.setAttribute('productPrice', data[index].price);
+        liWOB.setAttribute('productHref', data[index].href);
+
+        let divWOBI = item(div, "week-offer-block-image");
+        
+        let imgI = item(img, "");
+        imgI.setAttribute('src', data[index].image);
+        imgI.setAttribute('height', '200');
+        
+        divWOBI.append(imgI);
+
+        let ulI = item(ul, "");
 
         let li1 = item(li, "");
         li1.innerHTML = "<span class='attribute'>Дисплей:</span> " + data[index].display;
@@ -59,8 +65,6 @@ $.getJSON('https://my-json-server.typicode.com/vpysanka/web/week-offer-items', f
 
         let li6 = item(li, "");
         li6.innerHTML = "<span class='attribute'>Вес:</span> " + data[index].weight;
-
-        let ulI = item(ul, "");
 
         if (data[index].weight == "") {
             ulI.append(li1);
@@ -93,11 +97,13 @@ $.getJSON('https://my-json-server.typicode.com/vpysanka/web/week-offer-items', f
         aBB.setAttribute('name', 'buy-button');
         aBB.innerHTML = "Купить";
 
+        liWOB.append(divWOBI);
+        liWOB.append(ulI);
+        liWOB.append(pI);
+        liWOB.append(aBB);
+        
         divWOB.append(h3N);
-        divWOB.append(divWOBI);
-        divWOB.append(ulI);
-        divWOB.append(pI);
-        divWOB.append(aBB);
+        divWOB.append(liWOB);
 
         return divWOB;
     }
