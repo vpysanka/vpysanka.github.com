@@ -1,229 +1,912 @@
-<!DOCTYPE html>
-<html lang="ru">
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Oswald:300|Roboto:300" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/main.css">
-    <title>Главная</title>
-</head>
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: black;
+    width: 100%;
+    min-width: 320px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 30px 300px auto 30px;
+    grid-template-rows: 45px auto auto auto auto;
+    grid-template-areas: "logo        logo            top-navigation top-navigation " 
+                         ".           left-navigation banner         .              " 
+                         ".           week-offer      week-offer     .              " 
+                         ".           sale-leaders    sale-leaders   .              " 
+                         "main-footer main-footer     main-footer    main-footer    ";
+}
 
-<body>
-    <span class='top'></span>
-    <div class="nav-logo">
-        <div id="nav-icon">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <nav>
-            <a href="main.html">My E-Shop</a>
-        </nav>
-    </div>
-    <div class="top-navigation">
-        <nav class="navigation">
-            <ul>
-                <li>
-                    <a class="catalog">Каталог товаров</a>
-                </li>
-                <li>
-                    <a href="about_old.html">О нас</a>
-                </li>
-                <li>
-                    <a href="#">Оплата и доставка</a>
-                </li>
-                <li>
-                    <a href="contacts_old.html">Контакты</a>
-                </li>
-                <li>
-                    <a href="blog_old.html">Блог</a>
-                </li>
-            </ul>
-            <div class="shopping-bag" id="total-items">
-                <i></i>
-                <span>0</span>
-            </div>
-            <script type="text/javascript">
-                if (localStorage.getItem('myCart') != null) {
-                    cartData = JSON.parse(localStorage.getItem('myCart'));
-                    if (cartData[0].TotalQuantity >= 1 ) {
-                        document.getElementById('total-items').querySelector('span').innerHTML = cartData[0].TotalQuantity;
-                        document.querySelector('.shopping-bag span').classList.add('active');
-                    }
-                }
-            </script>
-        </nav>
-    </div>
-    <div class="left-navigation">
-        <div class="left-nav-logo">
-            <img src="img/logo.jpg" width="200" height="200">
-        </div>
-        <ul>
-            <li>
-                <a href="#"><span class="caption">Смартфоны</span></a>
-                <a href="#"><p class="pick">Подобрать смартфон</p></a>
-            </li>
-            <li>
-                <a href="#"><span class="caption">Планшеты</span></a>
-                <a href="#"><p class="pick">Подобрать планшет</p></a>
-            </li>
-            <li>
-                <a href="#"><span class="caption">Смарт-часы</span></a>
-                <a href="#"><p class="pick">Подобрать смарт-часы</p></a>
-            </li>
-        </ul>
-    </div>
-    <div class="banner">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-                <li data-target="#myCarousel" data-slide-to="3"></li>
-                <li data-target="#myCarousel" data-slide-to="4"></li>
-            </ol>
-        
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner">
-                <div class="item active">
-                    <a href="#"><img src="img/banner_1.jpg" style="width:100%;"></a>
-                </div>
-                <div class="item">
-                    <a href="#"><img src="img/banner_2.jpg" style="width:100%;"></a>
-                </div>
-                <div class="item">
-                    <a href="#"><img src="img/banner_3.jpg" style="width:100%;"></a>
-                </div>
-                <div class="item">
-                    <a href="#"><img src="img/banner_4.jpg" style="width:100%;"></a>
-                </div>
-                <div class="item">
-                    <a href="#"><img src="img/banner_5.jpg" style="width:100%;"></a>
-                </div>
-            </div>
-        
-            <!-- Left and right controls -->
-            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </div>
-    <div class="week-offer">
-        <h2><a href="#">Предложения недели</a></h2>
-        <div class="week-offer-all-blocks">
-            
-        </div>
-        <button class="wo_prev">&#10094;</button>
-        <button class="wo_next">&#10095;</button>
-    </div>
-    <div class="sale-leaders">
-        <h2><a href="#">Лидеры продаж</a></h2>
-        <ul class="grid caption-hover">
-            
-        </ul>
-    </div>
-    <div class="main-footer">
-        <p class="copyright">&copy; 2017 My E-Shop</p>
-        <nav>
-            <a href="https://www.facebook.com" title="We in Facebook"><i class="fa fa-facebook-square"></i></a>
-            <a href="https://twitter.com" title="We in Twitter"><i class="fa fa-twitter-square"></i></a>
-            <a href="https://www.instagram.com" title="We in Instagram"><i class="fa fa-instagram"></i></a>
-        </nav>
-    </div>
+h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 48px;
+}
+
+h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 25px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+.top {
+    position: fixed;
+    right: 30px;
+    bottom: 90px;
+    width: 60px;
+    height: 60px;
+    background-image: url(../img/up.png);
+    background-size: 60px 60px;
+    cursor: pointer;
+    border-radius: 100%;
+    display: none;
+    z-index: 10;
+}
+
+.top:hover {
+    background-image: url(../img/up-hover.png);
+}
+
+/* Top Navigation */
+    .nav-logo {
+        grid-area: logo;
+        background: white;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-logo nav a {
+        font-weight: 700;
+        font-size: 22px;
+        letter-spacing: 7px;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #424652;
+        height: inherit;
+        justify-content: flex-start;
+    }
+
+    .nav-logo nav {
+        margin-top: 7px;
+    }
+
+    .top-navigation {
+        grid-area: top-navigation;
+        background: white;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    .top-navigation nav {
+        margin: 8px 0;
+    }
+
+    .navigation ul {
+        list-style: none;
+    }
+
+    .navigation ul li {
+        float: left;
+        padding-right: 5%;
+    }
+
+    .navigation ul li a {
+        transition: color 0.2s ease-in-out;
+        font-size: 14px;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #424652;
+    }
+
+    .navigation a:hover {
+        color: #8bc6db;
+    }
+
+    .navigation .catalog {
+        cursor: pointer;
+    }
+
+    .navigation .catalog.active {
+        color: #8bc6db;
+        font-weight: bold;
+    }
+
+    .shopping-bag {
+        float: right;
+        cursor: pointer;
+    }
+
+    .shopping-bag i {
+        position: absolute;
+        right: 30px;
+        bottom: 0;
+        width: 45px;
+        height: 45px;
+        background-image: url(../img/shopping-basket.png);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 30px 30px;
+    }
+
+    .shopping-bag span {
+        color: white;
+        font-size: 11px;
+        text-align: center;
+        line-height: 20px;
+        font-weight: bold;
+        position: absolute;
+        top: -100%;
+        right: 30px;
+        width: 18px;
+        height: 18px;
+        border-radius: 16px;
+        background: #1DA0CC;
+    }
+
+    .shopping-bag span.active {
+        top: 5px;
+    }
+
+    .shopping-bag i:hover {
+        background-image: url(../img/shopping-basket-hover.png);
+    }
+
+    .shopping-bag i.active {
+        background-image: url(../img/cross-hover.png);
+    }
+
+    #nav-icon {
+        width: 30px;
+        position: absolute;
+        top: -100%;
+        margin-top: 10px;
+        margin-right: 20px;
+        transform: rotate(0deg);
+        cursor: pointer;
+    }
+
+    #nav-icon span {
+        display: block;
+        position: absolute;
+        height: 5px;
+        width: 100%;
+        background: #424652;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: .25s ease-in-out;
+    }
+
+    #nav-icon span:nth-child(1), #nav-icon span:nth-child(2), #nav-icon span:nth-child(3), #nav-icon span:nth-child(4) {
+        top: -100%;
+    }
+      
+    #nav-icon.active span:nth-child(1) {
+        top: 9px;
+        width: 0%;
+        left: 50%;
+    }
+      
+    #nav-icon.active span:nth-child(2) {
+        transform: rotate(45deg);
+    }
+      
+    #nav-icon.active span:nth-child(3) {
+        transform: rotate(-45deg);
+    }
+      
+    #nav-icon.active span:nth-child(4) {
+        top: 9px;
+        width: 0%;
+        left: 50%;
+    }
+
+    #nav-menu {
+        position: fixed;
+        top: 0;
+        height: 100%;
+        width: 200px;
+        margin-top: 45px;
+        overflow-y: auto;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        left: -100%;
+        background: white;
+        transition: right 0.4s;
+        border-top: 3px solid #8bc6db;
+    }
+
+    #nav-menu.active {
+        left: 0;
+        z-index: 50;
+    }
+
+    #nav-menu ul li {
+        display: block;
+        margin: 0;
+        padding: 16px 15px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    #nav-menu ul li a {
+        transition: color 0.2s ease-in-out;
+        color: #424652;
+        display: inline-block;
+        text-decoration: none;
+    }
+
+    #nav-menu ul li a:hover {
+        color: #8bc6db;
+    }
+
+/* Left Navigation */
+    .left-navigation {
+        grid-area: left-navigation;
+        background: white;
+        margin-right: 30px;
+    }
+
+    .left-nav-logo {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0 45px 0;
+    }
+
+    .left-navigation ul {
+        list-style: none;
+    }
+
+    .left-navigation ul li {
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .left-navigation a {
+        color: #424652;
+        text-decoration: none;
+    }
+
+    .caption {
+        display: block;
+        border-top: 1px solid #D9DCE0;
+        padding-top: 15px;
+        padding-bottom: 10px;
+    }
+
+    a .caption:hover {
+        color: #8bc6db;
+    }
+
+    .pick {
+        font-size: 13px;
+        padding: 8px 0;
+        background-image: linear-gradient(#D9DCE0, #C0C3C7);
+        border-radius: 20px;
+        margin: 0 25px 20px 25px;
+    }
+
+    a .pick:hover {
+        background-image: linear-gradient(#8bc6db, #79B7CC);
+    }
+
+/* Banner */
+    .banner {
+        grid-area: banner;
+        margin: auto 0;
+    }
+
+    .carousel-indicators {
+        top: 91%;
+    }
+
+    .carousel-indicators li {
+        width: 20px;
+        height: 20px;
+        border: 2px solid #D9DCE0;
+    }
+
+    .carousel-indicators .active {
+        width: 22px;
+        height: 22px;
+        background-image: linear-gradient(#8bc6db, #79B7CC);
+    }
+
+/* Week Offer */
+    .week-offer {
+        grid-area: week-offer;
+        width: 100%;
+        margin: 10px auto 10px auto;
+        overflow: hidden;
+        background: white;
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+        border-radius: 15px;
+        position: relative;
+    }
+
+    .week-offer h2 {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    .week-offer h2 a {
+        color: black;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    .week-offer-all-blocks {
+        padding: 0;
+        margin: 0 55px 16px 55px;
+        height: 480px;
+        list-style: none;
+        text-align: center;
+    }
+
+    .week-offer-block {
+        display: inline-block;
+        margin-bottom: 30px;
+        text-shadow: 0 1px rgba(255,255,255,.8);
+        border: 1px solid #ddd;
+        padding: 16px;
+        transition: transform 6s ease-in-out;
+    }
+
+    .week-offer-block li {
+        text-align: left;
+        list-style: none;
+    }
+
+    .week-offer-block h3 {
+        margin: -17px -17px 0 -17px;
+        text-align: center;
+        padding: 9px 0;
+        background-color: #eee;
+        background-image: linear-gradient(#fff, #eee);
+    }
+
+    .week-offer-block h3 a {
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .week-offer-block:hover h3 a {
+        transition: color 0.2s ease-in-out;
+        color: #8bc6db;
+    }
+
+    /* @media (min-width: 1125px) {
+        .week-offer-block h3 a:hover {
+            color: #8bc6db;
+        }
     
-    <div class="mega-menu">
-        <div class="mega-menu-top">
-            <div class="mega-search">
-                <label for="mega-search">Поиск</label>
-                <input type="search" id="mega-search" placeholder="Поиск товара">
-            </div>
-        </div>
-        <div class="items-container">
-            <div class="container">
-                <a href="#">Смартфоны
-                <div class="container-image">
-                    <img src="img/items/phones/101_1.jpg" height="100">
-                </div>
-                </a>
-            </div>                        
-            <div class="container">
-                <a href="#">Планшеты
-                <div class="container-image">
-                    <img src="img/items/tablets/201_1.jpg" height="100">
-                </div>
-                </a>
-            </div>
-            <div class="container">
-                <a href="#">Смарт-часы
-                <div class="container-image">
-                    <img src="img/items/watches/301_1.jpg" height="100">
-                </div>
-                </a>
-            </div>
-        </div>
-    </div>
-    <div id="cart-menu">
-        <p class="empty-cart">Ваша корзина пустая</p>
-    </div>
-    <div id="nav-menu">
-        <ul>
-            <li>
-                <a href="#catalog">Каталог товаров</a>
-            </li>
-            <li>
-                <a href="about_old.html">О нас</a>
-            </li>
-            <li>
-                <a href="#">Оплата и доставка</a>
-            </li>
-            <li>
-                <a href="contacts_old.html">Контакты</a>
-            </li>
-            <li>
-                <a href="blog_old.html">Блог</a>
-            </li>
-        </ul>
-    </div>
-    <script src="js/top-navigation.js"></script>
-    <script defer src="js/week-offer-items.js"></script>
-    <script defer src="js/week-offer-carousel.js"></script>
-    <script defer src="js/sale-leaders.js"></script>
-    <script>
-        setTimeout(function() {
-            var script = document.createElement('script');
-            script.type = "text/javascript";
-            script.src = "js/cart.js";
-            document.head.appendChild(script);
-        }, 3000);
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $(window).scroll(function() {
-                if ($(this).scrollTop() > 500 && $(window).width() > 1125) {
-                    $('.top').fadeIn(300);
-                } else {
-                    $('.top').fadeOut(200);
-                }
-            });
-            $('.top').click(function() {
-                $('body, html').animate({
-                    scrollTop: 0
-                }, 200);
-                return false;
-            });
-        });
-    </script>
-</body>
-</html>
+        .week-offer-block:hover {
+            z-index: 10;
+            top: -10px;
+            border-width: 3px;
+            padding: 30px 20px;
+            border-radius: 5px;
+            box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);
+        }
+    
+        .week-offer-block:hover h3 {
+            margin: -33px -22px 0 -22px;
+            padding: 9px 0;
+            background-color: #ddd;
+            background-image: linear-gradient(#eee, #ddd);
+        }
+    } */
+
+    .week-offer-block-image {
+        display: block;
+        max-width: 100%;
+        text-align: center;
+        margin: 18px 33px;
+    }
+
+    .week-offer-block ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .attribute {
+        color: #918A8A;
+    }
+
+    .hot-price {
+        font-weight: bold;
+        font-size: 22px;
+        color: #FF6600;
+    }
+
+    .buy-button {
+        position: relative;
+        padding: 5px 20px;
+        font-weight: bold;
+        color: black;
+        text-decoration: none;
+        background-color: #D9DCE0;
+        background-image: linear-gradient(#D9DCE0, #C0C3C7);
+        box-shadow: 0 1px 0 rgba(255, 255, 255, .5), 0 2px 0 rgba(0, 0, 0, .7);
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .buy-button:hover {
+        color: black;
+        text-decoration: none;
+        background-image: linear-gradient(#C0C3C7, #A5A8AC);
+    }
+
+    .week-offer button {
+        position: absolute;
+        top: 199px;
+        font-size: 64px;
+        color: #8bc6db;
+        background: white;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        padding: 0;
+    }
+
+    .week-offer button.wo_prev {
+        left: 0;
+        display: none;
+    }
+
+    .week-offer button.wo_prev:active {
+        color: #79B7CC;
+    }
+
+    .week-offer button.wo_next {
+        right: 0;
+    }
+
+    .week-offer button.wo_next:active {
+        color:#79B7CC;
+    }
+
+/* Sale Leaders */
+    .sale-leaders {
+        grid-area: sale-leaders;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+
+    .sale-leaders h2 {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    .sale-leaders h2 a {
+        color: black;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    .grid {
+        padding: 0;
+        margin: 0 auto;
+        list-style: none;
+        text-align: center;
+    }
+
+    .grid li {
+        text-align: left;
+        list-style: none;
+    }
+
+    .grid figure {
+        margin: 0 50px;
+        position: relative;
+    }
+
+    .grid figure img {
+        max-width: 100%;
+        display: block;
+    }
+
+    .grid figcaption {
+        position: absolute;
+        left: 0;
+        padding: 5px;
+        background: white;
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    .grid figcaption a {
+        text-align: center;
+        padding: 5px 10px;
+        border-radius: 3px;
+        display: inline-block;
+        background: #26B5E9;
+        color: #0A0707;
+        text-decoration: none;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .grid figcaption a:hover {
+        background: #8bc6db;
+    }
+
+    .caption-hover figure {
+        overflow: hidden;
+    }
+    
+    .caption-hover figure img {
+        transition: transform 0.4s;
+    }
+
+    .caption-hover figcaption {
+        height: 130px;
+        width: 100%;
+        top: auto;
+        bottom: 0;
+        opacity: 0;
+        transform: translateY(100%);
+        transition: transform 0.4s, opacity 0.1s 0.3s;
+    }
+
+    .caption-hover figure:hover figcaption {
+        opacity: 1;
+        transform: translateY(0px);
+        transition: transform 0.4s, opacity 0.1s;
+    }
+
+    .caption-hover figcaption a {
+        position: absolute;
+        bottom: 10px;
+        right: 20px;
+    }
+
+    .leader_block {
+        display: inline-block;
+        margin-bottom: 32px;
+    }
+
+    .leader_block h3 {
+        margin-bottom: 16px;
+    }
+
+    .leader_block h3 a {
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .leader_block h3 a:hover {
+        color: #8bc6db;
+    }
+
+    .leader_grid {
+        padding: 0;
+    }
+
+    .ribbon1 {
+        width: 30px;
+        padding: 10px 0 5px 0;
+        position: absolute;
+        top: -6px;
+        left: 25px;
+        text-align: center;
+        border-top-left-radius: 3px;
+        background: #FF6600;
+        font-size: 14px;
+        line-height: 18px;
+    }
+    
+    .ribbon1:before, .ribbon1:after {
+        content: "";
+        position: absolute;
+    }
+    
+    .ribbon1:after {
+        height: 0;
+        width: 0;
+        bottom: -15px;
+        left: 0;
+        border-left: 15px solid #FF6600;
+        border-right: 15px solid #FF6600;
+        border-bottom: 15px solid transparent;
+    }
+
+    .ribbon2 {
+        width: 130px;
+        height: 30px;
+        line-height: 30px;
+        position: absolute;
+        top: 20px;
+        right: -30px;
+        z-index: 10;
+        overflow: hidden;
+        transform: rotate(45deg);
+        border: 1px dashed;
+        box-shadow:0 0 0 3px #28C214,  0px 21px 5px -18px rgba(0,0,0,0.6);
+        background: #28C214;
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+/* Main Footer */
+    .main-footer {
+        grid-area: main-footer;
+        margin: 32px 0.5% 0.5% 0.5%;
+        padding: 26px 5%;
+        border-top: 2px solid #e9e9e9;
+        background: #CDCECF
+    }
+
+    .main-footer .copyright {
+        float: left;
+        font-size: 14px;
+        margin: 0;
+        padding-top: 6px;
+    }
+
+    .main-footer nav {
+        float: right;
+        font-size: 25px;
+        margin: 0;
+    }
+
+    .main-footer nav i {
+        color:#424652;
+        margin-left: 16px;
+    }
+
+/* Mega Menu */
+    .mega-menu {
+        position: fixed;
+        top: 0;
+        background: white;
+        height: 280px;
+        overflow: auto;
+        top: -100%;
+        transition: all 0.3s cubic-bezier(0.420, 0.000, 0.580, 1.000);
+        width: 96%;
+        margin: 0 2%;
+        z-index: 20;
+        border-top: 3px solid #8bc6db;
+    }
+
+    .mega-menu.active {
+        box-shadow: 0px 0px 10px 2px rgba(126, 161, 154, 1);
+        top: 45px;
+    }
+
+    .mega-menu label {
+        position: absolute;
+        top: -99999px;
+        left: -99999px;
+    }
+
+    .mega-menu-top {
+        margin-bottom: 16px;
+        overflow: hidden;
+    }
+
+    .mega-search {
+        display: inline-block;
+        margin: 10px 0 10px 10px;
+        min-width: 98%;
+    }
+
+    .mega-search input[type="search"] {
+        background-image: url(../img/search.ico);
+        background-position: 10px center;
+        background-repeat: no-repeat;
+        background-size: 25px 25px;
+        border: 1px solid rgba(204, 204, 204, 1);
+        border-radius: 5px;
+        box-sizing: border-box;
+        float: left;
+        font-family: "Open Sans", sans-serif;
+        font-size: 16px;
+        line-height: 27px;
+        margin: 0;
+        padding: 5px 5px 5px 40px;
+        width: 100%;
+    }
+      
+    .mega-search input[type="search"]:focus {
+        outline: none;
+    }
+
+    .items-container {
+        width: 100%;
+    }
+
+    .container {
+        width: 33%;
+        position: relative;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .container a {
+        font-size: 16px;
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .container a:hover {
+        color: #8bc6db;
+    }
+
+    .container:hover {
+        top: -10px;
+        border-width: 3px;
+    }
+
+    .container-image {
+        text-align: center;
+        margin-top: 18px;
+    }
+
+/* Shopping cart */
+    .empty-cart {
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    #cart-menu {
+        position: fixed;
+        top: 0;
+        height: 100%;
+        width: 300px;
+        margin-top: 45px;
+        overflow-y: auto;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        right: -100%;
+        background: white;
+        transition: right 0.4s;
+        border-top: 3px solid #8bc6db;
+    }
+
+    #cart-menu.active {
+        right: 0;
+        z-index: 50;
+    }
+
+    #cart-menu .cart-items {
+        padding: 0;
+    }
+
+    #cart-menu .cart-items li {
+        position: relative;
+        padding: 16px 0 16px 60px;
+        border-top: 1px solid #e0e6ef;
+    }
+
+    #cart-menu .cart-items li a {
+        color: #1DA0CC;
+    }
+
+    #cart-menu .quantity {
+        color: #a5aebc;
+    }
+
+    #cart-menu .product-image {
+        position: absolute;
+        left: 3px;
+        top: 13px;
+    }
+
+    #cart-menu .item-remove {
+        position: absolute;
+        right: 5%;
+        top: 50%;
+        bottom: auto;
+        transform: translateY(-50%);
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: url("../img/remove-item.png") no-repeat center;
+        cursor: pointer;
+    }
+
+    #cart-menu .cart-total {
+        padding: 16px 0 16px 16px;
+        background-color: #424652;
+        color: whitesmoke;
+    }
+
+    #cart-menu .cart-total p {
+        margin: 0;
+    }
+
+    #cart-menu .cart-total span {
+        float: right;
+        padding-right: 16px;
+        font-weight: bold;
+    }
+
+    #cart-menu .check-out {
+        text-align: center;
+        margin: 16px 32px;
+        background-color: #8bc6db;
+        border-radius: 20px;
+        padding: 8px 0;
+    }
+
+    #cart-menu .check-out:hover {
+        background-color: #1DA0CC;
+    }
+
+    #cart-menu .check-out a {
+        text-decoration: none;
+        color: white;
+    }
+
+    #cart-menu .go-to-cart {
+        text-align: center;
+        margin: 16px 0 56px 0;
+    }
+
+    #cart-menu .go-to-cart a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #1DA0CC;
+    }
+
+    #cart-menu .go-to-cart:hover {
+        text-decoration: underline;
+    }
+
+
+    @media (max-width: 979px) {
+        body {
+            grid-template-columns: 15px 300px auto 15px;
+            grid-template-areas: "logo        logo          top-navigation top-navigation " 
+                                ".           banner        banner         .              " 
+                                ".           week-offer    week-offer     .              " 
+                                ".           sale-leaders  sale-leaders   .              " 
+                                "main-footer main-footer   main-footer    main-footer    ";
+        }
+
+        .navigation ul {
+            display: none;
+        }
+
+        .left-navigation {
+            display: none;
+        }
+
+        #nav-icon {
+            position: relative;
+            top: 0;
+            transition: .5s ease-in-out;
+        }
+
+        #nav-icon span:nth-child(1) {
+            top: 0px;
+        }
+            
+        #nav-icon span:nth-child(2), #nav-icon span:nth-child(3) {
+            top: 9px;
+        }
+            
+        #nav-icon span:nth-child(4) {
+            top: 18px;
+        }
+    }
