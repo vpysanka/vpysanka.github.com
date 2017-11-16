@@ -32,7 +32,8 @@ h2 {
 }
 
 h3 {
-    font-size: 18px;
+    font-size: 27px;
+    font-weight: bold;
 }
 
 .top {
@@ -873,40 +874,105 @@ h3 {
         text-decoration: underline;
     }
 
+/* About */
 
-    @media (max-width: 979px) {
-        body {
-            grid-template-columns: 15px 300px auto 15px;
-            grid-template-areas: "logo        logo          top-navigation top-navigation " 
-                                ".           banner        banner         .              " 
-                                ".           week-offer    week-offer     .              " 
-                                ".           sale-leaders  sale-leaders   .              " 
-                                "main-footer main-footer   main-footer    main-footer    ";
-        }
-
-        .navigation ul {
-            display: none;
-        }
-
-        .left-navigation {
-            display: none;
-        }
-
-        #nav-icon {
-            position: relative;
-            top: 0;
-            transition: .5s ease-in-out;
-        }
-
-        #nav-icon span:nth-child(1) {
-            top: 0px;
-        }
-            
-        #nav-icon span:nth-child(2), #nav-icon span:nth-child(3) {
-            top: 9px;
-        }
-            
-        #nav-icon span:nth-child(4) {
-            top: 18px;
-        }
+    hr {
+        width: 3em;
+        display: block;
+        border: 0;
+        border-top: 2px solid #8bc6db;
+        margin: 10px 0;
     }
+
+    .navigation ul li a.active {
+        font-weight: bold;
+        color: #8bc6db;
+        cursor: pointer;
+    }
+
+    .about {
+        grid-area: week-offer;
+    }
+
+    .about h3 {
+        margin: 20px 0;
+    }
+
+    .left {
+        padding-right: 40%;
+    }
+
+    .right {
+        padding-left: 40%;
+    }
+
+    .about div p {
+        font-size: 19px;
+        text-align: justify;
+        margin-bottom: 30px;
+    }
+
+    .bg {
+        background-size: cover;
+        background-position: 50%;
+        background-attachment: fixed;
+        height: 50vh;
+        width: 100%;
+    }
+    
+    .bg1 {
+        background-image: url("../img/about1.jpg");
+    }
+    
+    .bg2 {
+        background-image: url("../img/about2.jpg");
+    }
+    
+    .bg3 {
+        background-image: url("../img/about3.jpg");
+    }
+
+@media (max-width: 979px) {
+    body {
+        grid-template-columns: 15px 300px auto 15px;
+        grid-template-areas: "logo        logo          top-navigation top-navigation " 
+                             ".           banner        banner         .              " 
+                             ".           week-offer    week-offer     .              " 
+                             ".           sale-leaders  sale-leaders   .              " 
+                             "main-footer main-footer   main-footer    main-footer    ";
+    }
+
+    .navigation ul {
+        display: none;
+    }
+
+    .left-navigation {
+        display: none;
+    }
+
+    #nav-icon {
+        position: relative;
+        top: 0;
+        transition: .5s ease-in-out;
+    }
+
+    #nav-icon span:nth-child(1) {
+        top: 0px;
+    }
+            
+    #nav-icon span:nth-child(2), #nav-icon span:nth-child(3) {
+        top: 9px;
+    }
+            
+    #nav-icon span:nth-child(4) {
+        top: 18px;
+    }
+
+    .left {
+        padding-right: 0;
+    }
+
+    .right {
+        padding-left: 0;
+    }
+}
