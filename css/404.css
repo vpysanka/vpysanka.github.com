@@ -1,0 +1,35 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: black;
+    min-width: 375px;
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 32px;
+    color: tomato;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 97vh;
+}
+
+span {
+    font-size: 64px;
+}
+
+a {
+    text-decoration: none;
+    color: #26B5E9;
+}
