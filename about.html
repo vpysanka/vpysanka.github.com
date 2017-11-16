@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300|Roboto:300" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <title>О нас</title>
+</head>
+
+<body>
+    <span class='top'></span>
+    <div class="nav-logo">
+        <div id="nav-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav>
+            <a href="main.html">My E-Shop</a>
+        </nav>
+    </div>
+    <div class="top-navigation">
+        <nav class="navigation">
+            <ul>
+                <li>
+                    <a class="catalog">Каталог товаров</a>
+                </li>
+                <li>
+                    <a class="active">О нас</a>
+                </li>
+                <li>
+                    <a href="#">Оплата и доставка</a>
+                </li>
+                <li>
+                    <a href="contacts_old.html">Контакты</a>
+                </li>
+                <li>
+                    <a href="blog_old.html">Блог</a>
+                </li>
+            </ul>
+            <div class="shopping-bag" id="total-items">
+                <i></i>
+                <span>0</span>
+            </div>
+            <script type="text/javascript">
+                if (localStorage.getItem('myCart') != null) {
+                    cartData = JSON.parse(localStorage.getItem('myCart'));
+                    if (cartData[0].TotalQuantity >= 1 ) {
+                        document.getElementById('total-items').querySelector('span').innerHTML = cartData[0].TotalQuantity;
+                        document.querySelector('.shopping-bag span').classList.add('active');
+                    }
+                }
+            </script>
+        </nav>
+    </div>
+
+    <div class="about">
+        <h1>О магазине</h1>
+        <hr>
+        <div class="left">
+            <h3>У нас высокая степень ответственности</h3>
+            <p>
+                Наш интернет-магазин - это место, хорошо знакомое всем ценителям эксклюзивной электроники 
+                класса люкс и людям, стремящимся быть в курсе последних новинок и тенденций мира современных 
+                технологий. My E-Shop предлагает Вашему вниманию лучшую флагманскую технику со всего мира, 
+                а также большой выбор эксклюзивных дизайнерских аксессуаров и уникальных гаджетов. В интернет 
+                магазине My E-Shop Вы всегда сможете порадовать себя и приобрести подарок, который приятно 
+                удивит Ваших близких и друзей.
+            </p>
+        </div>
+        <section class="bg bg1"></section>
+        <div class="right">
+            <h3>Если Вы покупаете у нас, вам не о чем беспокоиться</h2>
+            <p>
+                Наш интернет-магазин My E-Shop, радует своих клиентов эксклюзивными гаджетами и аксессуарами. 
+                Наш интернет-магазин представляет роскошный мир уникальных новинок легендарных мировых брендов, 
+                а также эксклюзивные аксессуары от культовых брендов высокой моды. Посетив наш интернет-магазин
+                My E-Shop, Вы сможете подобрать подарок себе, своим близким и друзьям. Если Вы задруняетесь в 
+                выборе, наши специалисты предоставят подробную профессиональную консультацию по каждому из 
+                представленных продуктов. Мы ценим и экономим Ваше время! My E-Shop – интернет-магазин 
+                эксклюзивных гаджетов и аксессуаров для Вас.
+            </p>
+        </div>
+        <section class="bg bg2"></section>
+        <div class="left">
+            <h3>Мы сплоченная команда</h2>
+            <p>
+                My E-Shop - это мекка самых последних и актуальных новинок в мире мобильной электроники и 
+                аксессуаров класса люкс. В нашем интернет-магазине мы представляем Вашему вниманию лучшую 
+                флагманскую технику со всего мира, а также большой выбор уникальных аксессуаров и гаджетов,
+                которые подчеркнут Ваш статус и стиль от ведущих мировых брендов. В нашем интернет-магазине
+                My E-Shop Вы с максимальным комфортом сможете подобрать модный гаджет себе, либо в подарок 
+                своим друзьям и близким. Наши профессиональные консультанты помогут Вам подобрать желаемую 
+                модель и предоставят детальную консультацию по ее использованию: объяснят назначение новых 
+                функций, расскажут о правилах эксплуатации и т.д. Технические эксперты настроят и загрузят 
+                практически любой необходимый контент или программное обеспечение. My E-Shop – это эксклюзивная 
+                мобильная электроника и гаджеты для тех, кто ценит лучшее.
+            </p>
+        </div>
+        <section class="bg bg3"></section>
+        <div class="right">
+            <h2>Ценим ваше время точно так же как и свое</h2>
+            <p>
+                Все товары в нашем интернет магазине сопровождаются гарантией. Подтверждением гарантии служит 
+                фирменный гарантийный талон. Мы дорожим своей репутацией, и поэтому сознательно не продаём 
+                неофициальный или нелегальный товар без гарантии и сервисной поддержки в Украине. В конечном 
+                итоге покупка продуктов сомнительного происхождения доставляет головную боль и для продавца, 
+                и для покупателя. Поэтому в интернет-магазине My E-Shop продается только сертифицированная в
+                Украине лучшая флагманская техника со всего мира и уникальные аксессуары и гаджеты.
+            </p>
+        </div>
+    </div>
+
+    <div class="main-footer">
+        <p class="copyright">&copy; 2017 My E-Shop</p>
+        <nav>
+            <a href="https://www.facebook.com" title="We in Facebook"><i class="fa fa-facebook-square"></i></a>
+            <a href="https://twitter.com" title="We in Twitter"><i class="fa fa-twitter-square"></i></a>
+            <a href="https://www.instagram.com" title="We in Instagram"><i class="fa fa-instagram"></i></a>
+        </nav>
+    </div>
+    
+    <div class="mega-menu">
+        <div class="mega-menu-top">
+            <div class="mega-search">
+                <label for="mega-search">Поиск</label>
+                <input type="search" id="mega-search" placeholder="Поиск товара">
+            </div>
+        </div>
+        <div class="items-container">
+            <div class="container">
+                <a href="#">Смартфоны
+                <div class="container-image">
+                    <img src="img/items/phones/101_1.jpg" height="100">
+                </div>
+                </a>
+            </div>                        
+            <div class="container">
+                <a href="#">Планшеты
+                <div class="container-image">
+                    <img src="img/items/tablets/201_1.jpg" height="100">
+                </div>
+                </a>
+            </div>
+            <div class="container">
+                <a href="#">Смарт-часы
+                <div class="container-image">
+                    <img src="img/items/watches/301_1.jpg" height="100">
+                </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="cart-menu">
+        <p class="empty-cart">Ваша корзина пустая</p>
+    </div>
+    <div id="nav-menu">
+        <ul>
+            <li>
+                <a href="#catalog">Каталог товаров</a>
+            </li>
+            <li>
+                <a class="active">О нас</a>
+            </li>
+            <li>
+                <a href="#">Оплата и доставка</a>
+            </li>
+            <li>
+                <a href="contacts_old.html">Контакты</a>
+            </li>
+            <li>
+                <a href="blog_old.html">Блог</a>
+            </li>
+        </ul>
+    </div>
+    <script src="js/top-navigation.js"></script>
+    <script>
+        setTimeout(function() {
+            var script = document.createElement('script');
+            script.type = "text/javascript";
+            script.src = "js/cart.js";
+            document.head.appendChild(script);
+        }, 3000);
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 500 && $(window).width() > 1125) {
+                    $('.top').fadeIn(300);
+                } else {
+                    $('.top').fadeOut(200);
+                }
+            });
+            $('.top').click(function() {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 200);
+                return false;
+            });
+        });
+    </script>
+</body>
+</html>
