@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300|Roboto:300" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Контакты</title>
+</head>
+
+<body>
+    <span class='top'></span>
+    <div class="nav-logo">
+        <div id="nav-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav>
+            <a href="index.html">My E-Shop</a>
+        </nav>
+    </div>
+    <div class="top-navigation">
+        <nav class="navigation">
+            <ul>
+                <li>
+                    <a class="catalog">Каталог товаров</a>
+                </li>
+                <li>
+                    <a href="about.html">О нас</a>
+                </li>
+                <li>
+                    <a href="404.html">Оплата и доставка</a>
+                </li>
+                <li>
+                    <a class="active">Контакты</a>
+                </li>
+                <li>
+                    <a href="blog.html">Блог</a>
+                </li>
+            </ul>
+            <div class="shopping-bag" id="total-items">
+                <i></i>
+                <span>0</span>
+            </div>
+            <script type="text/javascript">
+                if (localStorage.getItem('myCart') != null) {
+                    cartData = JSON.parse(localStorage.getItem('myCart'));
+                    if (cartData[0].TotalQuantity >= 1 ) {
+                        document.getElementById('total-items').querySelector('span').innerHTML = cartData[0].TotalQuantity;
+                        document.querySelector('.shopping-bag span').classList.add('active');
+                    }
+                }
+            </script>
+        </nav>
+    </div>
+    
+    <div class="content">
+        <h1>Контакты</h1>
+        <hr>
+
+        <section class="bg bg3"></section>
+
+        <h3>Звоните нам</h3>
+
+        <div class="contacts"><p>
+                (044) 333-22-55<br>
+                (067) 333-22-55 (Kyivstar)<br>
+                (095) 333-22-55 (Vodafone)<br>
+                (063) 333-33-55 (Lifecell)<br>
+        </p></div>
+
+        <h3>Приезжайте к нам</h3>
+        <div class="contacts">
+            <p><b>г. Киев, ул. Прорезная, 8</b></p>
+            <div class="coordinats"><i>Координаты для GPS навигатора:<br>
+            широта: 50°26'55.7" N долгота: 30°31'11.2" E</i></div>
+            <p><b>ПН - ПТ</b> 10:00 - 20:00<br>
+            <b>СБ</b> 10:00 - 17:00<br>
+            <b>ВС Выходной</b></p>
+        </div>
+
+        <h3>Остались вопросы?</h3>
+        <div class="contacts"><p>
+            Напишите нам:
+        </p></div>
+
+        <form>
+            <div>
+                <input type="text" id="input-name" placeholder="Имя">
+                <input type="email" id="input-email" placeholder="E-Mail">
+                <input type="text" id="input-subject" placeholder="Тема">
+                <textarea name="message" type="text" id="input-message" placeholder="Сообщение"></textarea>
+            </div>
+            <input type="submit" value="Отправить" id="input-submit">
+        </form>
+
+        <iframe src="https://snazzymaps.com/embed/20242" width="100%" height="300px" style="border:none;"></iframe>
+    </div>
+    
+    <div class="main-footer">
+        <p class="copyright">&copy; 2017 My E-Shop</p>
+        <nav>
+            <a href="https://www.facebook.com" title="We in Facebook"><i class="fa fa-facebook-square"></i></a>
+            <a href="https://twitter.com" title="We in Twitter"><i class="fa fa-twitter-square"></i></a>
+            <a href="https://www.instagram.com" title="We in Instagram"><i class="fa fa-instagram"></i></a>
+        </nav>
+    </div>
+    <div class="mega-menu">
+        <div class="mega-menu-top">
+            <div class="mega-search">
+                <label for="mega-search">Поиск</label>
+                <input type="search" id="mega-search" placeholder="Поиск товара">
+            </div>
+        </div>
+        <div class="items-container">
+            <div class="container">
+                <a href="#">Смартфоны
+                <div class="container-image">
+                    <img src="img/items/phones/101_1.jpg" height="100">
+                </div>
+                </a>
+            </div>                        
+            <div class="container">
+                <a href="#">Планшеты
+                <div class="container-image">
+                    <img src="img/items/tablets/201_1.jpg" height="100">
+                </div>
+                </a>
+            </div>
+            <div class="container">
+                <a href="#">Смарт-часы
+                <div class="container-image">
+                    <img src="img/items/watches/301_1.jpg" height="100">
+                </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="cart-menu">
+        <p class="empty-cart">Ваша корзина пустая</p>
+    </div>
+    <div id="nav-menu">
+        <ul>
+            <li>
+                <a href="#catalog">Каталог товаров</a>
+            </li>
+            <li>
+                <a href="about.html">О нас</a>
+            </li>
+            <li>
+                <a href="404.html">Оплата и доставка</a>
+            </li>
+            <li>
+                <a href="contacts_old.html">Контакты</a>
+            </li>
+            <li>
+                <a href="blog_old.html">Блог</a>
+            </li>
+        </ul>
+    </div>
+    <script src="js/top-navigation.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>
