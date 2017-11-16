@@ -21,6 +21,7 @@ nav_icon.addEventListener('click', function() {
 mega_menu.addEventListener('mouseleave', function() {
     setTimeout(function() {
         mega_menu.classList.remove('active');
+        catalog.classList.remove('active');
     }, 500);
 });
 
