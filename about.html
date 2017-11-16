@@ -34,13 +34,13 @@
                     <a class="active">О нас</a>
                 </li>
                 <li>
-                    <a href="#">Оплата и доставка</a>
+                    <a href="404.html">Оплата и доставка</a>
                 </li>
                 <li>
-                    <a href="contacts_old.html">Контакты</a>
+                    <a href="contacts.html">Контакты</a>
                 </li>
                 <li>
-                    <a href="blog_old.html">Блог</a>
+                    <a href="blog.html">Блог</a>
                 </li>
             </ul>
             <div class="shopping-bag" id="total-items">
@@ -59,7 +59,7 @@
         </nav>
     </div>
 
-    <div class="about">
+    <div class="content">
         <h1>О магазине</h1>
         <hr>
         <div class="left">
@@ -168,41 +168,17 @@
                 <a class="active">О нас</a>
             </li>
             <li>
-                <a href="#">Оплата и доставка</a>
+                <a href="404.html">Оплата и доставка</a>
             </li>
             <li>
-                <a href="contacts_old.html">Контакты</a>
+                <a href="contacts.html">Контакты</a>
             </li>
             <li>
-                <a href="blog_old.html">Блог</a>
+                <a href="blog.html">Блог</a>
             </li>
         </ul>
     </div>
     <script src="js/top-navigation.js"></script>
-    <script>
-        setTimeout(function() {
-            var script = document.createElement('script');
-            script.type = "text/javascript";
-            script.src = "js/cart.js";
-            document.head.appendChild(script);
-        }, 3000);
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $(window).scroll(function() {
-                if ($(this).scrollTop() > 500 && $(window).width() > 1125) {
-                    $('.top').fadeIn(300);
-                } else {
-                    $('.top').fadeOut(200);
-                }
-            });
-            $('.top').click(function() {
-                $('body, html').animate({
-                    scrollTop: 0
-                }, 200);
-                return false;
-            });
-        });
-    </script>
+    <script src="js/cart.js"></script>
 </body>
 </html>
