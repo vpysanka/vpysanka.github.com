@@ -942,11 +942,8 @@ hr {
         margin: -29px 0 30px 48px;
     }
 
-    .bg {
+    .bg4 {
         height: 75vh;
-    }
-
-    .bg3 {
         background-image: url("../img/map.jpg");
     }
 
