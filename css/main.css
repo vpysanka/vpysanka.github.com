@@ -895,6 +895,8 @@ hr {
 
 .content h3 {
     margin: 20px 0;
+    font-size: 27px;
+    font-weight: bold;
 }
 
 .content p {
