@@ -914,11 +914,11 @@ hr {
 
 /* About */
 
-    .left {
+    .text_left {
         padding-right: 40%;
     }
 
-    .right {
+    .text_right {
         padding-left: 40%;
     }
     
