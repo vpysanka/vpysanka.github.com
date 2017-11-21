@@ -1,4 +1,4 @@
-$.getJSON('https://my-json-server.typicode.com/vpysanka/web/week-offer-items', function(data) {
+$.getJSON('https://raw.githubusercontent.com/vpysanka/vpysanka.github.com/master/json/week-offer-items.db', function(data) {
 
     let div = document.createElement('div');
     let h3 = document.createElement('h3');
