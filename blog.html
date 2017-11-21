@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300|Roboto:300" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <title>Блог</title>
+</head>
+
+<body>
+    <span class="top"></span>
+
+    <div class="nav-logo">
+        <div id="nav-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav>
+            <a href="index.html">My E-Shop</a>
+        </nav>
+    </div>
+
+    <div class="top-navigation"></div>
+
+    <div class="content">
+        <h1>Блог</h1>
+        <hr>
+        <section>
+            <article class="blogArticle">
+                <h3>
+                    <a href="#"><img src="img/smartphone.jpg" width="200" height="200">Как выбрать смартфон</a>
+                </h3>
+                <p class="date"><time datetime="2017-09-23" pubdate>23 сентября 2017</time></p>
+                <p class="blogArticleText">В кармане каждого лежит смартфон, и для многих это уже не просто «звонилка», 
+                а целая вселенная с неограниченными возможностями. Хотите обновить своего «старичка», но не знаете,
+                какую модель лучше выбрать? Сейчас не запутаться сложно: новые и крутые игроки появляются почти 
+                каждый месяц, а в ассортименте магазинов тысячи моделей телефонов. С нашими советами вы научитесь 
+                ориентироваться в самых важных характеристиках смартфона: диагональ, тип дисплея, ОС, аппаратная 
+                платформа, камера, время работы и стандарты связи.</p>
+                <a href="#" class="more">Читать дальше ></a>
+            </article>
+            <footer>
+                <ul class="tag">
+                    <li><a href="#">#смартфон</a></li>
+                    <li><a href="#">#гид</a></li>
+                    <li><a href="#">#помощь в выборе</a></li>
+                </ul>
+            </footer>
+        </section>
+        <section>
+            <article class="blogArticle">
+                <h3>
+                    <a href="#"><img src="img/planshet.jpg" width="200" height="200">Как выбрать планшет</a>
+                </h3>
+                <p class="date"><time datetime="2017-09-09" pubdate>09 сентября 2017</time></p>
+                <p class="blogArticleText">Планшеты не выпускают из рук и взрослые, и дети, это незаменимые помощники
+                в учебе, работе и развлечениях. Они меняются, обновляются и улучшаются так быстро, что не успеваешь 
+                понять, чем один лучше другого. Этот материал поможет определиться с выбором и подобрать оптимальную 
+                модель.</p>
+                <a href="#" class="more">Читать дальше ></a>
+            </article>
+            <footer>
+                <ul class="tag">
+                    <li><a href="#">#планшет</a></li>
+                    <li><a href="#">#гид</a></li>
+                    <li><a href="#">#помощь в выборе</a></li>
+                </ul>
+            </footer>
+        </section>
+        <section>
+            <article class="blogArticle">
+                <h3>
+                    <a href="#"><img src="img/band.jpg" width="200" height="200">Смарт-часы или фитнес-браслет:
+                    чем отличаются и что выбрать</a>
+                </h3>
+                <p class="date"><time datetime="2017-08-19" pubdate>19 августа 2017</time></p>
+                <p  class="blogArticleText">Фитнес-браслеты и смарт-часы уже давно перестали быть чем-то необычным.
+                Сегодня на руках у многих можно увидеть яркий браслетик со светодиодами или часы, показывающие немного
+                больше чем просто время или дату. Такие устройства действительно полезны или это очередной писк моды? 
+                В нашем материале мы постараемся найти ответы на все вопросы.</p>
+                <a href="#" class="more">Читать дальше ></a>
+            </article>
+            <footer>
+                <ul class="tag">
+                    <li><a href="#">#смарт-часы</a></li>
+                    <li><a href="#">#фитнес-браслет</a></li>
+                    <li><a href="#">#гид</a></li>
+                    <li><a href="#">#помощь в выборе</a></li>
+                </ul>
+            </footer>
+        </section>
+    </div>
+
+    <div class="main-footer">
+        <p class="copyright">&copy; 2017 My E-Shop</p>
+        <nav>
+            <a href="https://www.facebook.com" title="We in Facebook"><i class="fa fa-facebook-square"></i></a>
+            <a href="https://twitter.com" title="We in Twitter"><i class="fa fa-twitter-square"></i></a>
+            <a href="https://www.instagram.com" title="We in Instagram"><i class="fa fa-instagram"></i></a>
+        </nav>
+    </div>
+    
+    <div class="mega-menu"></div>
+
+    <div id="cart-menu">
+        <p class="empty-cart">Ваша корзина пустая</p>
+    </div>
+
+    <div id="nav-menu"></div>
+
+    <script src="js/top-navigation.js"></script>
+    <script>
+        setTimeout(function() {
+            var script = document.createElement('script');
+            script.type = "text/javascript";
+            script.src = "js/cart.js";
+            document.body.appendChild(script);
+        }, 3000);
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 500 && $(window).width() > 1125) {
+                    $('.top').fadeIn(300);
+                } else {
+                    $('.top').fadeOut(200);
+                }
+            });
+            $('.top').click(function() {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 200);
+                return false;
+            });
+        });
+    </script>
+</body>
+</html>
