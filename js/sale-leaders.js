@@ -1,4 +1,4 @@
-$.getJSON('https://my-json-server.typicode.com/vpysanka/web/sale-leaders', function(data) {
+$.getJSON('https://raw.githubusercontent.com/vpysanka/vpysanka.github.com/master/json/sale-leaders.db', function(data) {
     
     let div = document.createElement('div');
     let h3 = document.createElement('h3');
