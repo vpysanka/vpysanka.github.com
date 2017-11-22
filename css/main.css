@@ -1013,7 +1013,6 @@ hr {
 }
 
 .content p {
-    font-size: 19px;
     text-align: justify;
     margin-bottom: 30px;
 }
@@ -1051,7 +1050,7 @@ hr {
 /* Delivery */
     .deliveryArticle span.head {
         font-weight: bold;
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .deliveryArticle .deliveryArticleText {
@@ -1258,5 +1257,18 @@ hr {
 
     form {
         max-width: 100%;
+    }
+
+    .blogArticle {
+        padding-left: 0;
+        padding-top: 220px;
+    }
+
+    .blogArticle p.date {
+        margin: 13px 0 13px;
+    }
+
+    .content footer .tag {
+        padding-left: 0px;
     }
 }
