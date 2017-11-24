@@ -1218,6 +1218,10 @@ hr {
     .shopping-bag i {
         right: 10px;
     }
+    
+    .shopping-bag span {
+        right: 10px;
+    }
 
     .week-offer-all-blocks {
         margin: 0 25px 16px 25px;
